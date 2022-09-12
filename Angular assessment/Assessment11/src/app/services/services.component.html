@@ -1,0 +1,23 @@
+<p>ngIf directive</p>
+<div *ngIf="service">service works </div>
+<br>
+<table>
+      <tbody> 
+        <tr *ngFor="let emp of employees;" [ngClass]="{'empNumber less': emp.empNumber<2}">
+            <td>{{emp.empNumber}}</td> <br>
+            <td>{{emp.empName}}</td>
+        </tr>
+        </tbody>
+</table>
+<br>
+<a [routerLink]="[]" (click)="selectTab(1)">Tab-1</a> &nbsp; | &nbsp;
+<a [routerLink]="[]" (click)="selectTab(2)">Tab-2</a>&nbsp; | &nbsp;
+<a [routerLink]="[]" (click)="selectTab(3)">Tab-3</a>&nbsp; | &nbsp;
+<a [routerLink]="[]" (click)="selectTab(4)">Tab-4</a> <br>
+<div [ngSwitch]="optionValue">
+    <div *ngSwitchCase="1">output - 1</div>
+    <div *ngSwitchCase="2">output - 2</div>
+    <div *ngSwitchCase="3">output - 3</div>
+    <div *ngSwitchCase="4">output - 4</div>
+    
+</div>
