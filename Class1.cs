@@ -47,7 +47,6 @@ namespace Assessment_11th_Q
     }
 
 
-    Question:
 
 
 
