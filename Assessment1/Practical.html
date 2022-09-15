@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Calibri, Helvetica, sans-serif;
+        background-color: pink;
+      }
+      .container {
+        padding: 50px;
+        background-color: lightblue;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      textarea {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        background-color: orange;
+        outline: none;
+      }
+      div {
+        padding: 10px 0;
+      }
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+      .register {
+        background-color: #4caf50;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+      .register:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="container">
+        <label id="userName"> Enter User Name </label>
+        <input type="text" name="username" size="15" /> <br />
+        <br />
+        <label id="Password"> Enter Password</label>
+        <input type="password" name="Password" size="15" /> <br />
+        <br />
+        <br />
+        <label id="Mobile number"> Enter mobile number </label>
+
+        <input type="text" name="Mobile number" size="10" />
+        <br />
+        <br />
+        <label id="DOB">Enter Date of Birth</label>
+        <input type="date" size="15>" <br />
+        <br />
+        <label type="text" id="Address"> Address</label>
+        <br />
+        <textarea cols="80" rows="5" value="address"> </textarea>
+        <br />
+        <br />
+
+        <br />
+        <br />
+        <button type="submit" class="register">Register User</button>
+      </div>
+    </form>
+    <script>
+      function validateform() {
+        var name = document.myform.name.value;
+        var password = document.myform.password.value;
+        if (name == null || name == "") {
+          alert("Name can't be blank");
+          return false;
+        } else if (password.length < 6) {
+        }
+      }
+    </script>
+  </body>
+</html>

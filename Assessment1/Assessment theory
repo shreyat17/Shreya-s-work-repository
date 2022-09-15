@@ -1,0 +1,72 @@
+1A)a.Call Back function: Call back is a function which will be executed after
+executing one function. If a function is being executed,then call back function
+will be the one which is to be executed next. Any function that is passed as an
+argument to another function so that it can be executed in that other function
+is called as a callback function.
+
+b.Callback Hell: Callback Hell is nested
+callbacks one below the other forming a pyramid structure. Every callback waits
+for the previous callback. This pyramid structure affects the readability of the
+Code.
+
+2A)To iterate an object different methods can be used like: For loop,while
+loop and do while loop can be used to iterate an object in javascript.
+While loop: It executes a program with the given condition until its true. 
+For example, i=1; 
+while(i<=5)
+{ console.log(i); i++ }
+It repeats or iterates the elements until the condition is satisfied. 
+Do while loop: It executes the
+program without checking the condition is true or not. It executes the program
+till where it is satisfied.
+For example, i=0,
+Do while(i<=1)
+{ console.log(i);
+i++ } 
+For loop: This loop can be used to check the condition and repeat the
+elements.
+For example, for (let i = 1; i <= 5; i++) 
+{ console.log(i); }
+The
+whole loop is executed in one statement with the help of a for loop. 
+
+3A)Promise:
+A promise can be of 3 types: -Pending -Reject -Complete Example: let promise=new
+promise(resolve,reject)=> let a=10; 
+let b=2;
+let c=a/b; if(c>=0) resolve(c);
+else reject("invalid data"); };
+
+4A) Converting one data type to another is known
+as coercion. For example,"2" is a string now but it can be converted into a
+number by removing double quotes.It becomes 2 which is a number.
+
+5A)Pass by
+value: In Pass by value, function is called by directly passing the value of the
+variable as an argument. So any changes made inside the function does not affect
+the original value.
+Pass by reference:In Pass by Reference, Function is called
+by directly passing the address of the variable as an argument. So changing the
+value inside the function also change the original value.
+
+6A)Flexbox is one
+dimensional while grid is two dimensional. Flexbox works on content while grid
+works on layout. 
+
+7A)Currying is defined as changing a function having multiple
+arguments into a sequence of functions with a single argument. let multiply =
+(a, b, c) => { return a * b * c; }
+let multiply_curried = (a) => (b) => (c) => {
+return a * b * c; } let res = multiply(1, 2, 3); console.log(res); 
+let res2 =
+multiply_curried(1)(2)(3); console.log(res2); 
+
+
+8A)The way in which objects inherit properties from one another is known as prototype.
+
+10A)Src attribute can be used in
+this case when a script should be taken into another script box. With the help of src attribute data can be derived from different
+script blocks. 
+
+9A)Javascript is loosely typed whereas typescript is strongly
+typed. Class is not there in Javascript whereas it exists in typescript.

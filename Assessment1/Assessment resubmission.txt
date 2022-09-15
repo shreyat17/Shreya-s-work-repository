@@ -1,0 +1,192 @@
+  1.What is call back function and call back hell function?
+ A)a.Call Back function: A callback is a function passed as an argument to another function.
+This technique allows a function to call another function.
+A callback function can run after another function has finished.
+Example:function myFirst() {
+  myDisplayer("Hello");
+}
+
+function mySecond() {
+  myDisplayer("Goodbye");
+}
+
+myFirst();
+mySecond();
+The functions are executed in the sequence they are called.
+
+b.Callback Hell: Callback Hell is nested
+callbacks one below the other forming a pyramid structure. Every callback waits
+for the previous callback. This pyramid structure affects the readability of the
+Code.
+Example:
+const cart=["shoes","pants","kurta"];
+api.createOrder(cart,function() {
+api.proceedToPayment(function() {
+api.showOrderSummary(
+function() {
+api.updateWallet()
+}
+}
+We can see here that apis are dependent on one another and one call back is  inside another callback inside another api in this way code starts to grow horizantally instead of vertically.
+This creates callback hell.
+
+
+2.Explain how to iterate an object in javascript.
+A)To iterate an object different methods can be used like: For loop,while
+loop and do while loop can be used to iterate an object in javascript.
+While loop: It executes a program with the given condition until its true. 
+For example, i=1; 
+while(i<=5)
+{ console.log(i); i++ }
+It repeats or iterates the elements until the condition is satisfied. 
+Do while loop: It executes the
+program without checking the condition is true or not. It executes the program
+till where it is satisfied.
+For example, i=0,
+Do while(i<=1)
+{ console.log(i);
+i++ } 
+For loop: This loop can be used to check the condition and repeat the
+elements.
+For example, for (let i = 1; i <= 5; i++) 
+{ console.log(i); }
+The
+whole loop is executed in one statement with the help of a for loop. 
+
+3.Explain about promises and create a custom promise with simple example.
+A)A Promise is a JavaScript object that links producing code and consuming code.
+A JavaScript Promise object contains both the producing code and calls to the consuming code:
+
+Example:
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  let x = 0;
+
+// The producing code (this may take some time)
+
+  if (x == 0) {
+    myResolve("OK");
+  } else {
+    myReject("Error");
+  }
+});
+
+myPromise.then(
+  function(value) {myDisplayer(value);},
+  function(error) {myDisplayer(error);}
+);
+
+
+A JavaScript Promise object can be:
+Pending
+Fulfilled
+Rejected
+The Promise object supports two properties: state and result.
+While a Promise object is "pending" (working), the result is undefined.
+When a Promise object is "fulfilled", the result is a value.
+When a Promise object is "rejected", the result is an error object.
+
+4.What is implicit type conversion in javascript?
+A) In certain situations, JavaScript automatically converts one data type to another (to the right type). This is known as implicit conversion.
+Example:
+// numeric string used with - , / , * results number type
+
+let result;
+
+result = '4' - '2'; 
+console.log(result); // 2
+
+result = '4' - 2;
+console.log(result); // 2
+
+result = '4' * 2;
+console.log(result); // 8
+
+result = '4' / 2;
+console.log(result); // 2
+
+5.Explain passed by value and passed by reference in javascript.
+A)Pass by
+value: In Pass by value, function is called by directly passing the value of the
+variable as an argument. So any changes made inside the function does not affect
+the original value.
+In Pass by value, parameters passed as an arguments create its own copy.
+ So any changes made inside the function is made to the copied value not to the original value .
+Example:
+let num1 = 70
+let num2 = num1
+
+console.log(num1) // 70
+console.log(num2) // 70
+
+num1 = 40
+
+console.log(num1) // 40
+console.log(num2) // 70
+
+Pass by reference:In Pass by Reference, Function is called
+by directly passing the address of the variable as an argument. So changing the
+value inside the function also change the original value.
+Example:
+let obj1 = {website: "Scaler Academy"}
+let obj2 = obj1;
+
+console.log(obj1)     // {website: "Scaler Academy"}
+console.log(obj2)     // {website: "Scaler Academy"}
+
+obj1.website = "Scaler Topics"
+
+console.log(obj1)     // {website: "Scaler Topics"}
+console.log(obj2)     // {website: "Scaler Topics"}
+
+
+6.What is the difference between flex and CSS grid?Explain with example.
+A) 
+The CSS Grid layout is 2 dimensional grid based layout system with rows and coloumns whereas CSS Flexbox is a 1 dimensional layout.It is useful in allocating and  aligning the space among items in a grid container.
+The CSS grid is useful in creating more complex and organised layouts whereas flex layout makes it easier to design and build responsive web pages without using a lot of float and position properties in our CSS code.
+To define a grid container,you will have to pass a display:grid property to your element.To start using flexbox you must create a flex container using the display;flex property.
+
+
+7.Explain about currying with examples.
+A)Currying is defined as changing a function having multiple
+arguments into a sequence of functions with a single argument.
+Example:
+ let multiply =
+(a, b, c) => { return a * b * c; }
+let multiply_curried = (a) => (b) => (c) => {
+return a * b * c; } let res = multiply(1, 2, 3); 
+console.log(res); 
+let res2 =
+multiply_curried(1)(2)(3); 
+console.log(res2); 
+
+
+8.Explain about object prototype and add reverse method to string class to reverse a given string.
+The way in which objects inherit properties from one another is known as prototype.
+Example:
+function reverseString(str) {
+            var newString = "";
+            for (var i = str.length - 1; i >= 0; i--) {
+                newString += str[i];
+            }
+            return newString;
+        }
+        let str = new String("Shreya");
+        console.log(reverseString(str));
+
+10.How to access data from one script block to another script block in javascript?
+A)Src(Source)attribute can be used in
+this case when a script should be taken into another script box. With the help of src attribute data can be derived from different
+script blocks. 
+
+9A)What are the differences between javascript and typescript?
+Javascript is loosely typed whereas typescript is strongly
+typed.
+ Class doesn't in Javascript whereas it exists in typescript.  
+TypeScript is known as an Object-oriented programming language whereas JavaScript is a prototype based language.
+TypeScript has a feature known as Static typing but JavaScript does not support this feature.
+TypeScript supports Interfaces but JavaScript does not.                                                        
+
