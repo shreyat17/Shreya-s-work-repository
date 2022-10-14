@@ -1,0 +1,37 @@
+﻿@model IEnumerable <MVCEF1.Models.employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="row">
+   <div class="col-md-8">
+       <table class="table">
+           <thead>
+               <tr>
+                   <th>Emp. Id</th>
+                   <th>Emp. Name</th>
+                   <th>Dept. Name</th>
+                   <th>Dept. Location</th>
+                   <th>Emp. Salary</th>
+               </tr>
+           </thead>
+           <tbody>
+               @foreach (var emp in Model)
+            {
+<tr>
+    <td>@emp.EmpId</td>
+    <td>@emp.EmpName</td>
+    <td>@emp.Department.DeptName</td>
+    <td>@emp.Department.DeptLocation</td>
+    <td>@emp.EmpSalary</td>
+</tr>
+            }
+           </tbody>
+       </table>
+       
+   </div>
+</div>
