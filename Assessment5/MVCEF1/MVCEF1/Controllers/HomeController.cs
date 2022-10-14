@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVCEF1.Models;
 using MVCEF1.ViewModels;
+using WebGrease.Css.Extensions;
 
 namespace MVCEF1.Controllers
 {
@@ -63,6 +64,50 @@ namespace MVCEF1.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(employee emp)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View();
+            }
+            emp.EmpId = 0;
+            context.employees.Add(emp);
+            context.SaveChanges();
+            return RedirectToAction("index");
+        }
+        public ActionResult Details (int id)
+        {
+            var emp=context.employees.Where(x=>x.EmpId== id).SingleOrDefault();
+            return View(emp);
+        }
+        [HttpGet]
+        public ActionResult Edit (int id)
+        {
+            var emp= context.employees.Where(x=>x.EmpId== id).SingleOrDefault();
+            return View(emp);
+        }
+        [HttpPost]
+        public ActionResult Edit(employee emp)
+        {
+            context.Entry(emp).State = System.Data.Entity.EntityState.Modified;
+            context.SaveChanges();
+        
+        
+            return RedirectToAction("index");
+        }
+        public ActionResult Delete(int id)
+        {
+            var emp=context.employees.Where(x=>x.EmpId==id).SingleOrDefault();
+            context.employees.Remove(emp);
+            context.SaveChanges();
+            return RedirectToAction("index");
         }
     }
 }
